@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
@@ -49,7 +49,10 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
+    - name: Remove existing directory
+      working-directory: /workdir
+      run: |
+        rm -rf openwrt
     - name: Clone source code
       working-directory: /workdir
       run: |
