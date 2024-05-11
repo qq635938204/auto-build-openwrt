@@ -24,3 +24,9 @@ wget https://github.com/vernesong/OpenClash/archive/refs/heads/master.zip
 unzip master.zip
 cp -r OpenClash-master/luci-app-openclash openwrt/package 
 cd openwrt/
+
+# Update argon theme
+rm -rf lede/package/lean/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git lede/package/lean/luci-theme-argon
+
+
