@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
+name: Build OpenWrt for Banana Pi M1
 
 on:
   repository_dispatch:
